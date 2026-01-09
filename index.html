@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Private MP3 Downloader</title>
+</head>
+<body>
+
+  <h2>MP3 Downloader (Private)</h2>
+
+  <input id="link" type="text" placeholder="Paste link YouTube"
+    style="width:300px; padding:8px;">
+
+  <br><br>
+
+  <button onclick="download()">Download MP3</button>
+
+  <script>
+    function download() {
+      const url = document.getElementById("link").value;
+      if (!url) {
+        alert("Masukin link dulu bro");
+        return;
+      }
+      window.location.href = "/download?url=" + encodeURIComponent(url);
+    }
+  </script>
+
+</body>
+</html>
