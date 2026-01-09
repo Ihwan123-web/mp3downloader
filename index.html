@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Private MP3 Downloader</title>
+  <meta charset="UTF-8">
+  <title>YT MP3 Downloader</title>
 </head>
 <body>
+  <h2>YT ke MP3 (Pribadi)</h2>
 
-  <h2>MP3 Downloader (Private)</h2>
-
-  <input id="link" type="text" placeholder="Paste link YouTube"
-    style="width:300px; padding:8px;">
-
+  <input type="text" id="url" placeholder="Paste link YouTube di sini" style="width:300px">
   <br><br>
-
   <button onclick="download()">Download MP3</button>
 
   <script>
     function download() {
-      const url = document.getElementById("link").value;
+      const url = document.getElementById("url").value;
       if (!url) {
-        alert("Masukin link dulu bro");
+        alert("Masukin link YouTube dulu bro");
         return;
       }
-      window.location.href = "/download?url=" + encodeURIComponent(url);
+
+      // service sementara
+      window.open(
+        "https://yt1s.com/en?q=" + encodeURIComponent(url),
+        "_blank"
+      );
     }
   </script>
-
 </body>
 </html>
